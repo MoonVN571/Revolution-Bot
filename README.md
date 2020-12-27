@@ -1,5 +1,5 @@
 # Revolution-Bot
-Discord bot by Moonz#0001
+Revolution Bot
 
 # Recode bot for yourself
 - Bạn có thể code lại bất kì thứ gì bạn muốn.
