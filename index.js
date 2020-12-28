@@ -1,59 +1,119 @@
-// 2M2O
-
+// Revolution
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const token = require('dotenv').config();
+// Const Embed
+const footer = "Revolution Bot";
+const color = "0xB0B0B0";
 
-const prefix = "$";
+// Check bolean
+var del = new Boolean(false);
+
+const cancelexecute = new Discord.RichEmbed()
+            .setTitle(`[Warning]`)
+            .setDescription(`Bạn không được phép sử dụng.`)
+            .setColor(color)
+            .setFooter(footer)
+            .setTimestamp(); // Cancelled embed
+
+// Set prefix
+const prefix = "%";
+
+// Token
+const token = require('dotenv').config();
 
 const config = {
   token: process.env.token
 };
 
 client.on('ready', () => {
-	console.log('Bot is online!');
+	    // log if bot started
+		console.log('Bot is online!');
 
-	client.user.setPresence({
-	status: "online",
-		game: {
-		name: "RESTARTING",
-		type: "PLAYING"
-		}
-	});
+		// Startup bot
+		client.user.setPresence({
+    		status: "online",
+    		game: {
+    		name: "RESTARTING",
+    		type: "PLAYING"
+    		}
+  		});
 
 });
 
-client.on("message", message => {
+client.on("guildMemberAdd", member => {
+    const channel = client.channels.get("756029760047677492");
+
+     //channel.send(`{member.user.tag}, welcome to Revolution`)
+});
+
+
+
+client.on("message", async message => {
+
 	if(message.author == client.user) return;
 
-	// Status of bot
+	// Auto react
+	const emoji = client.emojis.find(emoji => emoji.name === "verify") ;
+
+	if (message.author.id === '425599739837284362') {
+			message.react(emoji);
+	}
+
+	// Set status
 	client.user.setPresence({
-	status: "online",
+		status: "online",
 		game: {
-		name: "2m2o.xyz",
-		type: "PLAYING"
+		name: "Revolution 2021",
+		type: "WATCHING"
 		}
 	});
 
-	// Forked from Foundation Bot
-		
-	// Check if channel
-	let botChat  = client.channels.get('783648498876022814');
-	let otherChat  = client.channels.get('783648482862301184');
+	// Auto react
+//	if(message.channel.id === "792631698147377192") {
+//		message.react('👍').then(r => {
+//                message.react('👎');
+//        });
+//	}
 
-	// Constructor
-	const args = message.content.slice('').trim().split(/ +/g);
+	// Prefiexes
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 
-	// Check guild
-	const guild = message.guild.id === '783647633457020969';
+	// Embed
+    const usernotfound = new Discord.RichEmbed()
+		    .setTitle("[Kick Command]")
+			.setDescription(`Không tìm thấy user.`)
+			.setColor(color)
+            .setFooter(footer)
+            .setTimestamp();
+    const usernotfound2 = new Discord.RichEmbed()
+		    .setTitle("[Kick Command]")
+			.setDescription(`Không tìm thấy user.`)
+			.setColor(color)
+            .setFooter(footer)
+            .setTimestamp();
+
+
+    const notaguser = new Discord.RichEmbed()
+		    .setTitle("[Kick Command]")
+			.setDescription(`Bạn cần tag user.`)
+			.setColor(color)
+            .setFooter(footer)
+            .setTimestamp();
+
+   const cannotkick = new Discord.RichEmbed()
+			.setTitle("[Kick Command]")
+			.setDescription(`Không thể kick user này.`)
+			.setColor(color)
+			.setFooter(footer)
+			.setTimestamp();
 
 	// On bot ping
 	if(message.isMentioned(client.user)) {
 
 		const embed = new Discord.RichEmbed()
-								.setColor(0x000DFF)
+								.setColor(color)
 								.setTitle('[Bot Command]')
 								.setDescription('Prefix mặc định là ' + prefix)
 								.setFooter("Dev by Moonz#0001")
@@ -65,44 +125,129 @@ client.on("message", message => {
 
 	}
 
-	if(command === "help") {
+	// Ban Command
+	if(command === "ban") {
+        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
+			return message.channel.send(cancelexecute);
+
+		const member = message.mentions.members.first();
 
 		const embed = new Discord.RichEmbed()
-								.setColor(0x000DFF)
-								.setTitle('[Bot Command]')
-								.setDescription('Không có bất kì lệnh bổ sung nào.')
-								.setFooter("Dev by Moonz#0001")
-								.setTimestamp();
+                .setColor(color)
+                .setTitle('[Ban Command]')
+				.setDescription(`Đã ban **${id.id}** ra khỏi server.`)
+                .setFooter(footer)
+                .setTimestamp();
 
-		message.channel.send(embed).then(message => {
-			message.delete(10000);
-		});
+		 message.author.send(`> ID: ${id.id}\nID Này dùng để unban.`);
 
-		message.delete().then(msg =>{
-					
-		})
-
+         if(member){
+           member.ban().then((member) => {
+               message.channel.send(embed);
+           }).catch(() => {
+               message.channel.send(cancelexecute).then(msg => {
+					message.delete(10000); // 10 seconds
+				});
+           });
+         } else {
+           message.channel.send(usernotfound2).then(msg => {
+					message.delete(10000); // 10 seconds
+			});
+         }
 	}
 
-	if(!guild) return; // Check guilds
-		if(command === "cats") {
+	// Kick command
+	if(command === "kick") {
+		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+            return message.channel.send(cancelexecute);
+
+        const user = message.mentions.users.first();
+
+        if(user){
+            const member = message.guild.member(user);
+
+			const embed = new Discord.RichEmbed()
+                    .setColor(color)
+                    .setTitle('[Kick Command]')
+					.setDescription(`Đã kick **${user.tag}** ra khỏi server.`)
+                    .setFooter(footer)
+                    .setTimestamp();
+
+            if(member){
+                member.kick('You got kicked!').then(() =>{
+                    message.channel.send(embed);
+                }).catch(err =>{
+                    message.channel.send(cannotkick).then(msg => {
+						message.delete(10000); // 10 seconds
+					});
+                });
+            } else {
+                message.channel.send(usernotfound).then(msg => {
+					message.delete(10000); // 10 seconds
+				});
+            }
+        } else {
+            message.channel.send(notaguser).then(msg => {
+					message.delete(10000); // 10 seconds
+			});
+        }
+	}
+
+	// Test
+	if(command ===  "test") {
+			const member = message.mentions.members.first();
+		if(member) {
+			message.channel.send("User: " + member + `ID: ${member.id}`)
+		}
+		message.reply("Your stuff").then(sent => { // 'sent' is that message you just sent
+		  let id = sent.id;
+		  console.log(id);
+		});
+	}
+
+	// Help command
+    if(command === "help") {
+
+        const embed = new Discord.RichEmbed()
+                    .setColor(color)
+                    .setTitle('[Help Command]')
+                    .addField("*[Help Command]*", prefix + 'help', false)
+                    //.addField("*[Minecraft Status Command]*", prefix + 'queue', false)
+                    //.addField("*[Update Command]*", prefix + 'update', false)
+                    .setFooter(footer)
+                    .setTimestamp();
+
+        message.channel.send(embed).then(message => {
+            message.delete(10000);
+        });
+
+    }
+
+	// Check if channel
+	let catChannel = client.channels.get("782617703445692437");
+	let botChannel = client.channels.get("756030382595637258");
+	let botOnCustom = client.channels.get("756487071148933143");
+
+	// On cats command
+	if(!catChannel || !botChannel || !botOnCustom) return;
+		if(message.content.startsWith("cats")) {
 			setTimeout(function(){
 				message.delete();
-			}, 30000);// 30 seconds
-
+			}, 60000);
 		}
 
-		if(command === ",s") {
-			setTimeout(function(){
-				message.delete();
-			}, 30000); // 30 seconds
-
-		}
-
+		if(!catChannel || !botChannel || !botOnCustom) return;
+			if(message.content.startsWith(",s")) {
+				setTimeout(function(){
+					message.delete();
+				}, 60000);
+			}
 });
 
-// Log error
+
+
+// Catch error on console
 client.on("error", (e) => console.error(e));
 
-// On login bot
+// Login with token
 client.login(config.token);
