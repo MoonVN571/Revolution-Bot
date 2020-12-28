@@ -16,3 +16,8 @@ Revolution Bot
 - remade command system
 - add kick/ban command
 - add on bot ping
+- fixing user check run correct
+- add kick command
+- add more help
+- rename footer
+- auto react message
