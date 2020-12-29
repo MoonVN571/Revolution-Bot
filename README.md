@@ -1,6 +1,9 @@
 # Revolution-Bot
 Revolution Bot
 
+# Discord
+https://discord.gg/s9f8GUjz
+
 # Recode bot for yourself
 - Bạn có thể code lại bất kì thứ gì bạn muốn.
 
