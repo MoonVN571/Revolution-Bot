@@ -38,5 +38,12 @@ Có thể xem đây là util bot của CATS
 - fixes lowercase cats
 - added unban (dev)
 - added warn command
-
+- added auto react information channel
+- added react emoji
+- removed test command
 - changed in bot
+- added role manager
+- added channel for cats
+- fixes ban dev error
+- added dm message pls
+- improved ban command (dev)
