@@ -14,28 +14,28 @@ Revolution Bot
 - RELEEASED (Alpha): Thực hiện cats sẽ bị xoá sau 60 giây. Message ngoài kênh cats (team), bot (public), bot (team) sẽ không bị xoá.
 Có thể xem đây là util bot của CATS
 
-improved command system
-add token authencation dotenv
-add on ping the bot
-fixes user check run correct
-add kick command
-add more help
-rename footer
-auto react message with developer
-Fixes auto delete
-Add prefix args
-add kick command
-add ban command (dev)
-add say command (dev)
-add source command (dev)
-add dev mode
-Fixed crashes
-add specific thumb up down
-Fixes character auto delete
-New user id check with dev mode
-New help more
-fixes cats with more args
-fixes lowercase cats
-add unban (dev)
+- improved command system
+- added token authencation dotenv
+- added on ping the bot
+- fixes user check run correct
+- added kick command
+- added more help
+- rename footer
+- auto react message with developer
+- fixes auto delete
+- added prefix args
+- added kick command
+- added ban command (dev)
+- added say command (dev)
+- added source command (dev)
+- added dev mode
+- fixed crashes
+- added specific thumb up down
+- fixes character auto delete
+- new user id check with dev mode
+- new help more
+- fixes cats with more args
+- fixes lowercase cats
+- added unban (dev)
 
 changed in bot
