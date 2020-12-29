@@ -32,10 +32,11 @@ Có thể xem đây là util bot của CATS
 - fixed crashes
 - added specific thumb up down
 - fixes character auto delete
-- new user id check with dev mode
-- new help more
+- improved user id check with dev mode
+- added help command more
 - fixes cats with more args
 - fixes lowercase cats
 - added unban (dev)
+- added warn command
 
 - changed in bot
