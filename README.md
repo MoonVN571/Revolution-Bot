@@ -47,3 +47,4 @@ Có thể xem đây là util bot của CATS
 - fixes ban dev error
 - added dm message pls
 - improved ban command (dev)
+- improved kick command
