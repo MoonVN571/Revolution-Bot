@@ -17,7 +17,7 @@ https://discord.gg/s9f8GUjz
 - RELEEASED (Alpha): Thực hiện cats sẽ bị xoá sau 60 giây. Message ngoài kênh cats (team), bot (public), bot (team) sẽ không bị xoá.
 Có thể xem đây là util bot của CATS
 
-- improved command system
+- improved command system (first day)
 - added token authencation dotenv
 - added on ping the bot
 - fixes user check run correct
@@ -36,7 +36,7 @@ Có thể xem đây là util bot của CATS
 - added specific thumb up down
 - fixes character auto delete
 - improved user id check with dev mode
-- added help command more
+- added help command more ( 29 / 12 )
 - fixes cats with more args
 - fixes lowercase cats
 - added unban (dev)
@@ -48,6 +48,13 @@ Có thể xem đây là util bot của CATS
 - added role manager
 - added channel for cats
 - fixes ban dev error
-- added dm message pls
-- improved ban command (dev)
+- added dm message pls 
+- improving ban command ( 30 / 12 )
 - improved kick command
+- improving resource
+- added purge command
+- added moderator log
+- improved ban, warn, kick
+- improving ban, kick, forked
+- added purge, forked
+- improved resource
