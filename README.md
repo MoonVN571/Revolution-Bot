@@ -53,8 +53,9 @@ Có thể xem đây là util bot của CATS
 - improved kick command
 - improving resource
 - added purge command
-- added moderator log
+- added moderator log ( beta )
 - improved ban, warn, kick
 - improving ban, kick, forked
-- added purge, forked
+- added purge command, forked
 - improved resource
+- added clean command ( something )
