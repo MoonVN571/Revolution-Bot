@@ -16,6 +16,7 @@ https://discord.gg/s9f8GUjz
 # Changelog
 - RELEEASED (Alpha): Thực hiện cats sẽ bị xoá sau 60 giây. Message ngoài kênh cats (team), bot (public), bot (team) sẽ không bị xoá.
 Có thể xem đây là util bot của CATS
+- Updated at https://discord.gg/rx2n9hTD
 
 - improved command system (first day)
 - added token authencation dotenv
