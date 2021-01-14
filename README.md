@@ -4,21 +4,14 @@ Revolution Bot
 # Discord
 https://discord.gg/s9f8GUjz
 
-# Recode bot for yourself
-- Bạn có thể code lại bất kì thứ gì bạn muốn.
-
-# How to make your bot
-- Trước hết là cần 1 application (discord) để tạo bot. Tự tìm hiểu...
-- Bạn cần host bot, và cách tôi dùng là node, một app host mà tôi biết được.
-- Sau khi cài node xong và chạy install.bat để hoàn chỉnh discord bot.
-- Token à, bạn sẽ cần đấy, nhưng ở bước tạo bot. Token dùng để chạy bot và những dòng code của bạn.
-
 # Changelog
+- Bot created 29 / 10 / 2020
+
 - RELEEASED (Alpha): Thực hiện cats sẽ bị xoá sau 60 giây. Message ngoài kênh cats (team), bot (public), bot (team) sẽ không bị xoá.
 Có thể xem đây là util bot của CATS
 - Updated at https://discord.gg/rx2n9hTD
 
-- improved command system (first day)
+- improved command system ( 22 / 12 / 2020 : first day )
 - added token authencation dotenv
 - added on ping the bot
 - fixes user check run correct
@@ -37,7 +30,8 @@ Có thể xem đây là util bot của CATS
 - added specific thumb up down
 - fixes character auto delete
 - improved user id check with dev mode
-- added help command more ( 29 / 12 )
+
+- added help command more ( 29 / 12 / 2020 )
 - fixes cats with more args
 - fixes lowercase cats
 - added unban (dev)
@@ -50,7 +44,8 @@ Có thể xem đây là util bot của CATS
 - added channel for cats
 - fixes ban dev error
 - added dm message pls 
-- improving ban command ( 30 / 12 )
+
+- improving ban command ( 30 / 12 / 2020 )
 - improved kick command
 - improving resource
 - added purge command
@@ -60,3 +55,20 @@ Có thể xem đây là util bot của CATS
 - added purge command, forked
 - improved resource
 - added clean command ( something )
+
+- fixed bot will being ignore ping everyone, role and direct message of bot for not sending wrong ping ( 09 / 01 / 2021 )
+- added new status of bot
+- optimazed the bot
+
+- added package bot ( 14 / 01 / 2021 )
+- added database for warning
+- added warnings command
+- added resetwarn command
+- added new help system
+- remade package
+- remade sub moderation
+- information and command now working if args is null it will be return other reason 
+- fixed if user has * role able to use off command
+- fixed error ban command
+- fixed unban dont need permissions
+- information command now working ( what is this ? )
