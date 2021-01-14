@@ -67,8 +67,7 @@ Có thể xem đây là util bot của CATS
 - added new help system
 - remade package
 - remade sub moderation
-- information and command now working if args is null it will be return other reason 
 - fixed if user has * role able to use off command
 - fixed error ban command
 - fixed unban dont need permissions
-- information command now working ( what is this ? )
+- information and command now working if args is null it will be return other reason 
